@@ -1,10 +1,10 @@
-const user = localStorage.getItem("user").toString();
+const user = JSON.parse(localStorage.getItem("user"))
 console.log(user);
 const btn = document.getElementById("btn");
 
 const checkUser = (name, email, password) => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user[0] === name && user[1] === email && user[2] === password) {
+  
+  if (user.Name === name && user.Email === email && user.Password === password) {
     return true;
   } else {
     return false;
