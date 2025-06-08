@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/Logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Produtos - Tudo Vende</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .account {
+        width: 150px;
+        height: 100px;
+        position: fixed;
+        right: 5%;
+        bottom: 2%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2980b9;
+        text-align: center;
+
+        & span {
+          color: white;
+          font-family: "Poppins", sans-serif;
+          font-size: 20px;
+        }
+      }
+
+      body {
+        background-color: #f4f4f4;
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        background-color: #2c3e50;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .img-container img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        margin-right: 150px;
+      }
+
+      .title-container {
+        display: flex;
+        justify-content: center;
+        background-color: #3498db;
+        padding: 20px 20px;
+        border-radius: 8px;
+        width: 100%;
+
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .title-products {
+        font-size: 20px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #2980b9;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 20px 40px;
+        }
+
+        .img-container img {
+          margin-right: 0px;
+        }
+
+        header img {
+          width: 100%;
+          height: 100%;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding: 20px;
+        }
+      }
+
+      main {
+        flex-grow: 1;
+      }
+
+      .container {
+        background-color: inherit;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .products {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding: 20px 10px;
+        background-color: #ecf0f1;
+        border-top: 2px solid #bdc3c7;
+        border-bottom: 2px solid #bdc3c7;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .products::-webkit-scrollbar {
+        display: none;
+      }
+
+      .product {
+        background-color: white;
+        color: black;
+        min-width: 160px;
+        height: 220px;
+        padding: 10px;
+        margin: 0 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      hr {
+        border: none;
+        border-top: 2px solid #bdc3c7;
+        margin: 20px auto;
+        width: 80%;
+      }
+
+      .title {
+        color: white;
+      }
+
+      .See-Products {
+        font-size: 24px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .about-us {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .about-us h2 {
+        margin-bottom: 15px;
+        font-size: 24px;
+      }
+
+      .about-us p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .product img {
+        width: 100%;
+      }
+
+      .description span {
+        text-align: left;
+        font-size: 32px;
+        word-break: break-all;
+      }
+
+      span {
+        font-weight: bold;
+        color: #27ae60;
+      }
+
+      .items {
+        width: 140px;
+        height: 140px;
+      }
+
+      .vertical-hr {
+        transform: rotate(180deg);
+        border: 3px solid #2b2b2b;
+        width: 1px;
+      }
+
+      .table-container {
+        display: flex;
+        justify-content: center;
+      }
+      .price-table {
+        width: 80%;
+        height: 50%;
+        border-collapse: collapse;
+        margin-top: 40px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #fff;
+        margin-bottom: 50px;
+      }
+
+      .price-table thead {
+        background-color: #2c3e50;
+        color: white;
+      }
+
+      .price-table th,
+      .price-table td {
+        padding: 16px 20px;
+        text-align: left;
+        font-size: 16px;
+      }
+
+      .price-table tbody tr:nth-child(even) {
+        background-color: #f2f4f8;
+      }
+
+      .price-table tbody tr:hover {
+        background-color: #e1e7ec;
+        cursor: default;
+      }
+
+      .price-table th {
+        font-weight: bold;
+      }
+
+      .price-table td.price {
+        font-weight: bold;
+        color: #27ae60;
+      }
+
+      @media (max-width: 600px) {
+        .price-table th,
+        .price-table td {
+          font-size: 14px;
+          padding: 12px;
+        }
+      }
+
+      .header-title {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="account">
+      <span id="accountName">Clique para criar conta</span>
+    </div>
+    <header>
+      <div class="img-container">
+        <img src="img/Logo.png" alt="Logo da Loja" />
+      </div>
+      <div class="header-title">
+        <h1>Produtos</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contacts.html">Contatos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1 class="See-Products">Veja nossos Produtos</h1>
+        <span style="text-align: center; color: #404040"
+          ><small
+            >Se estiver no computador, segure Shift e role a rodinha do mouse
+            para navegar horizontalmente pelos produtos.</small
+          ></span
+        >
+        <hr />
+      </div>
+
+      <div class="title-container">
+        <h1 class="title">Roupas</h1>
+      </div>
+
+      <section class="products container">
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th/id/OIP.uD7mZNlH2UZf8KzaoZT0VwHaHa?rs=1&pid=ImgDetMain"
+            alt="Camisa Social Preta"
+          />
+          <p class="description">Camisa Social <br /><span>R$ 159,99</span></p>
+        </div>
+        <div class="product">
+          <img
+            class="items"
+            src="https://lojaspompeia.vtexassets.com/arquivos/ids/825836-314-419?v=638506156220230000&width=314&height=419&aspect=true"
+            alt="Calça de Abrigo Cinza"
+          />
+          <p class="description">Calça De Abrigo <br /><span>R$ 40,00</span></p>
+        </div>
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th?id=OPHS.godK%2bGlwKYSHPw474C474&w=248&h=248&c=17&o=5&pid=21.1"
+            alt="Moletom Preto"
+          />
+          <p class="description">Moletom <br /><span>R$ 50,00</span></p>
+        </div>
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th?q=Bermuda+Purple+Yellow&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=pt-BR&cc=BR&setlang=pt-br&adlt=moderate&t=1&mw=247"
+            alt="Bermuda"
+          />
+          <p class="description">Bermuda<br /><span>R$ 29,99</span></p>
+        </div>
+        <hr class="vertical-hr" />
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th/id/OIP.lxD9bOkY2Em3RoJQtS4ELQHaHa?w=203&h=203&c=7&r=0&o=5&pid=1.7"
+            alt="Vestido"
+          />
+          <p class="description">Vestido<br /><span>R$ 70,00</span></p>
+        </div>
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th/id/OIP.rD1dbRX4mDY_9aUl8AfTHwHaE7?w=203&h=135&c=7&r=0&o=5&pid=1.7"
+            alt="Saia"
+          />
+          <p class="description">Saia <br /><span>R$ 45,99</span></p>
+        </div>
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th/id/OIP.jdojCY2cO-FR7DiU4DrcAwHaJW?w=203&h=256&c=7&r=0&o=5&pid=1.7"
+            alt="Camisa Social"
+          />
+          <p class="description">Camisa Social<br /><span>R$ 149,99</span></p>
+        </div>
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th/id/OIP.5oXO3tPqOPrikulzxHZXqQHaHa?w=218&h=218&c=7&r=0&o=5&pid=1.7"
+            alt="Blazer"
+          />
+          <p class="description">Blazer <br /><span>R$ 259,99</span></p>
+        </div>
+      </section>
+
+      <div class="title-container">
+        <h1 class="title">Materiais</h1>
+      </div>
+
+      <section class="products container">
+        <div class="product">
+          <img
+            class="items"
+            src="https://http2.mlstatic.com/D_NQ_NP_875865-MLB79714876642_102024-O-linha-de-pedreiro-nylon-reforcado-100-metros-lotus.webp"
+            alt="Linha de Nylon Reforaçada"
+          />
+          <p class="description">Linha de Nylon <br /><span>R$19,87</span></p>
+        </div>
+
+        <div class="product">
+          <img
+            class="items"
+            src="https://th.bing.com/th/id/OIP.iNxD1GNt45eUosG2MWeLmAAAAA?rs=1&pid=ImgDetMain"
+            alt="Trena"
+          />
+          <p class="description">Trena <br /><span>R$ 29,99</span></p>
+        </div>
+
+        <div class="product">
+          <img
+            class="items"
+            src="https://cdn.leroymerlin.com.br/products/prumo_400g_momfort_89538232_bc3e_600x600.jpg"
+            alt="Prumo"
+          />
+          <p class="description">Prumo <br /><span>R$ 31,90</span></p>
+        </div>
+
+        <div class="product">
+          <img
+            class="items"
+            src="https://http2.mlstatic.com/D_NQ_NP_716505-MLA80061077256_102024-O.webp"
+            alt="Cabo de Aço"
+          />
+          <p class="description">Cabo de Aço <br /><span>R$ 14,89</span></p>
+        </div>
+
+        <hr class="vertical-hr" />
+
+        <div class="product">
+          <img
+            class="items"
+            src="https://img.lojadomecanico.com.br/IMAGENS/31/418/72866/1632163673999.JPG"
+            alt="Carrinho de Mão"
+          />
+          <p class="description">Carrinho de Mão<br /><span>R$ 159,00</span></p>
+        </div>
+
+        <div class="product">
+          <img
+            class="items"
+            src="https://img.lojadomecanico.com.br/256/21/230/164119/1630669330120.JPG"
+            alt="Martelete"
+          />
+          <p class="description">Martelete <br /><span>R$ 519,00</span></p>
+        </div>
+
+        <div class="product">
+          <img
+            class="items"
+            src="https://http2.mlstatic.com/D_NQ_NP_690892-MLU79387089509_092024-O.webp"
+            alt="Furadeira"
+          />
+          <p class="description">Furadeira <br /><span>R$ 249,00</span></p>
+        </div>
+
+        <div class="product">
+          <img
+            class="items"
+            src="https://http2.mlstatic.com/D_NQ_NP_948518-MLA81650420616_012025-O.webp"
+            alt="Troquesa"
+          />
+          <p class="description">Troquesa <br /><span>R$ 49,00</span></p>
+        </div>
+      </section>
+
+      <hr />
+
+      <h1 style="text-align: center">Tabela de Preços:</h1>
+
+      <div class="table-container">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th style="text-align: center">Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color: red; text-align: center" colspan="2">Roupas</td>
+            </tr>
+            <tr>
+              <td>Camisa Social</td>
+              <td class="price" style="text-align: center">R$ 159,99</td>
+            </tr>
+            <tr>
+              <td>Calça de Abrigo</td>
+              <td class="price" style="text-align: center">R$ 40,00</td>
+            </tr>
+            <tr>
+              <td>Moletom</td>
+              <td class="price" style="text-align: center">R$ 50,00</td>
+            </tr>
+            <tr>
+              <td>Bermuda</td>
+              <td class="price" style="text-align: center">R$ 29,99</td>
+            </tr>
+            <tr>
+              <td>Vestido</td>
+              <td class="price" style="text-align: center">R$ 70,00</td>
+            </tr>
+            <tr>
+              <td>Saia</td>
+              <td class="price" style="text-align: center">R$ 45,99</td>
+            </tr>
+            <tr>
+              <td>Camisa Social</td>
+              <td class="price" style="text-align: center">R$ 149,99</td>
+            </tr>
+            <tr>
+              <td>Blazer</td>
+              <td class="price" style="text-align: center">R$ 259,99</td>
+            </tr>
+            <tr>
+              <td style="color: red; text-align: center" colspan="2">
+                Materiais
+              </td>
+            </tr>
+            <tr>
+              <td>Linha de Nylon</td>
+              <td class="price" style="text-align: center">R$ 19,87</td>
+            </tr>
+            <tr>
+              <td>Trena</td>
+              <td class="price" style="text-align: center">R$ 29,99</td>
+            </tr>
+            <tr>
+              <td>Prumo</td>
+              <td class="price" style="text-align: center">R$ 31,90</td>
+            </tr>
+            <tr>
+              <td>Cabo de Aço</td>
+              <td class="price" style="text-align: center">R$ 14,89</td>
+            </tr>
+            <tr>
+              <td>Carrinho de Mão</td>
+              <td class="price" style="text-align: center">R$ 159,00</td>
+            </tr>
+            <tr>
+              <td>Martelete</td>
+              <td class="price" style="text-align: center">R$ 519,00</td>
+            </tr>
+            <tr>
+              <td>Furadeira</td>
+              <td class="price" style="text-align: center">R$ 249,00</td>
+            </tr>
+            <tr>
+              <td>Troquesa</td>
+              <td class="price" style="text-align: center">R$ 49,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <div class="about-us">
+        <h1>Sobre Nós</h1>
+        <p>
+          A Tudo Vende nasceu para tornar produtos de qualidade acessíveis a
+          todos, independentemente da localização ou poder aquisitivo. Somos
+          mais do que uma loja — somos um projeto de vida movido pelo
+          empreendedorismo e pelo desejo de fazer a diferença. Trabalhamos
+          diariamente para oferecer uma experiência de compra segura, rápida e
+          satisfatória, sempre priorizando o bom atendimento e a confiança dos
+          nossos clientes. Nossa missão é crescer, inovar e continuar
+          construindo essa história com você.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

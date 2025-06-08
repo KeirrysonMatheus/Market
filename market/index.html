@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/Logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Página Inicial - Tudo Vende</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      body {
+        background-color: #f4f6f9;
+        color: #2c3e50;
+      }
+
+      header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 40px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .img-container img {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #2980b9;
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 20px;
+        background-color: #3498db;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .hero .buttons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .hero .buttons a {
+        text-decoration: none;
+        background-color: white;
+        color: #3498db;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .hero .buttons a:hover {
+        background-color: #ecf0f3;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .about-us {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .about-us h2 {
+        margin-bottom: 15px;
+        font-size: 24px;
+      }
+
+      .about-us p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          flex-direction: column;
+          margin-top: 10px;
+        }
+
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        .hero .buttons {
+          flex-direction: column;
+        }
+      }
+
+      .account {
+        width: 150px;
+        height: 100px;
+        position: fixed;
+        right: 5%;
+        bottom: 2%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2980b9;
+        text-align: center;
+
+        & span {
+          color: white;
+          font-family: "Poppins", sans-serif;
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="account">
+      <span id="accountName">Clique para criar conta</span>
+    </div>
+    <header>
+      <div class="img-container">
+        <img src="img/Logo.png" alt="Logo da Tudo Vende" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="products.html">Produtos</a></li>
+          <li><a href="contacts.html">Contatos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Bem-vindo à Tudo Vende</h1>
+      <p>
+        Oferecemos produtos acessíveis, de qualidade e com atendimento de
+        confiança. Conheça nosso catálogo e entre em contato conosco!
+      </p>
+      <div class="buttons">
+        <a href="products.html">Ver Produtos</a>
+        <a href="contacts.html">Fale Conosco</a>
+        <a href="../account/index.html">Cadastre sua conta</a>
+      </div>
+    </section>
+    <footer>
+      <div class="about-us">
+        <h2>Sobre Nós</h2>
+        <p>
+          A Tudo Vende nasceu para tornar produtos de qualidade acessíveis a
+          todos, independentemente da localização ou poder aquisitivo. Somos
+          mais do que uma loja — somos um projeto de vida movido pelo
+          empreendedorismo e pelo desejo de fazer a diferença. Trabalhamos
+          diariamente para oferecer uma experiência de compra segura, rápida e
+          satisfatória, sempre priorizando o bom atendimento e a confiança dos
+          nossos clientes. Nossa missão é crescer, inovar e continuar
+          construindo essa história com você.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

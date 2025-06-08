@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/Logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contatos - Tudo Vende</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .account {
+        width: 150px;
+        height: 100px;
+        position: fixed;
+        right: 5%;
+        bottom: 2%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2980b9;
+        text-align: center;
+
+        & span {
+          color: white;
+          font-family: "Poppins", sans-serif;
+          font-size: 20px;
+        }
+      }
+
+      body {
+        background-color: #ecf0f3;
+        color: #2c3e50;
+      }
+
+      header {
+        background-color: #2c3e50;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .img-container img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        margin-right: 150px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 16px;
+        font-size: 18px;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .Title-Contacts {
+        color: white;
+        font-size: 20px;
+      }
+
+      .title-container {
+        background-color: #3498db;
+        padding: 20px 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-size: 32px;
+        color: white;
+      }
+
+      nav a:hover {
+        background-color: #2980b9;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 20px 40px;
+        }
+
+        .img-container img {
+          margin-right: 0px;
+        }
+
+        header img {
+          width: 100%;
+          height: 100%;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding: 20px;
+        }
+      }
+
+      .page-title {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 26px;
+        color: #2c3e50;
+      }
+
+      .container-Contacts {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        height: 70vh;
+        max-height: 528px;
+      }
+
+      .Contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 30vh;
+        height: 70vh;
+        padding: 20px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        max-height: 410px;
+        max-width: 400px;
+        min-width: 400px;
+      }
+
+      .list-contacts {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 20px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .list-contacts:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .list-contacts img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .list-contacts span,
+      .list-contacts a {
+        font-size: 20px;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .list-contacts a:hover {
+        color: skyblue;
+      }
+      footer {
+        margin-top: 90px;
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .about-us {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .about-us h2 {
+        margin-bottom: 15px;
+        font-size: 24px;
+      }
+
+      .about-us p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 420px) {
+        .Contacts {
+          min-width: 330px;
+
+          & a,
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+      main {
+        height: 100vh;
+      }
+
+      .header-title {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="account">
+      <span id="accountName">Clique para criar conta</span>
+    </div>
+
+    <header>
+      <div class="img-container">
+        <img src="img/Logo.png" alt="Logo da Loja" />
+      </div>
+      <div class="header-title">
+        <h1>Contatos</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="products.html">Produtos</a></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="page-title">
+        <h1>Nossos Contatos</h1>
+      </div>
+
+      <div class="container-Contacts">
+        <ul class="Contacts">
+          <li class="list-contacts">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/2111/2111774.png"
+              alt="WhatsApp"
+            />
+            <span>+55 53 999 999999</span>
+          </li>
+          <li class="list-contacts">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/4628/4628653.png"
+              alt="Facebook"
+            />
+            <a href="https://facebook.com.br" target="_blank">Tudo - Vende</a>
+          </li>
+          <li class="list-contacts">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png"
+              alt="Instagram"
+            />
+            <a href="https://instagram.com/tudovende" target="_blank"
+              >@tudovende</a
+            >
+          </li>
+          <li class="list-contacts">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/732/732200.png"
+              alt="Email"
+            />
+            <a href="mailto:cntt@tudovende.com">contato@tudovende.com</a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div class="about-us">
+        <h1>Sobre Nós</h1>
+        <p>
+          A Tudo Vende nasceu para tornar produtos de qualidade acessíveis a
+          todos, independentemente da localização ou poder aquisitivo. Somos
+          mais do que uma loja — somos um projeto de vida movido pelo
+          empreendedorismo e pelo desejo de fazer a diferença. Trabalhamos
+          diariamente para oferecer uma experiência de compra segura, rápida e
+          satisfatória, sempre priorizando o bom atendimento e a confiança dos
+          nossos clientes. Nossa missão é crescer, inovar e continuar
+          construindo essa história com você.
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
