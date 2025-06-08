@@ -19,7 +19,7 @@ btn.addEventListener("click", (event) => {
 
   const user = checkUser(name, email, password);
   if (user) {
-   window.location.href = "/market/index.html";
+   window.location.href = "../market/index.html";
   } else {
     alert("Verifique os dados e tente novamente");
   }
