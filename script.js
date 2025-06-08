@@ -16,13 +16,18 @@ btn.addEventListener('click', (event) => {
       const adEmail = document.getElementById('adMail')
       const adPassword = document.getElementById('adPassword')
 
-
       if(name.value && email.value && password.value) {
         const userName = name.value
         const userEmail = email.value
         const userPassword = password.value
-          const user = [userName, userEmail, userPassword]
+          const user = {
+            Name: userName, 
+            Email: userEmail,
+            Password: userPassword
+
+      }
           msgShow.style.visibility = 'visible'
+          msgShow.innerHTML = '<p>Usuário cadastrado com sucesso!</p><a href="login.html">Clique aqui para ir para tela de login</a>'
           localStorage.setItem('user', JSON.stringify(user))
           adName.style.visibility = 'hidden'
           adEmail.style.visibility = 'hidden'
