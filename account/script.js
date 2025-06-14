@@ -6,6 +6,14 @@ Ad.forEach(ad => {
           ad.style.visibility = 'hidden'
       })
 
+const verify = (item , ad , other , another ) => {
+    item.style.border = '1px solid red'
+    ad.style.visibility = 'visible'
+    other.style.border = ''
+    another.style.border = ''
+}
+
+
 btn.addEventListener('click', (event) => {
       event.preventDefault()
 
@@ -32,19 +40,16 @@ btn.addEventListener('click', (event) => {
           adEmail.style.visibility = 'hidden'
           adPassword.style.visibility = 'hidden'
       } else if(!name.value) {
-          name.style.border = '1px solid red'
-          adName.style.visibility = 'visible'
-          email.style.border = ''
-          password.style.border = ''
+
+        verify(name , adName , email , password)
+        
       } else if(!email.value) {
-          email.style.border = '1px solid red'
-          adEmail.style.visibility = 'visible'
-          name.style.border = ''
-          password.style.border = ''
+
+        verify(email , adEmail , name, password)
+
       } else if(!password.value) {
-          password.style.border = '1px solid red'
-          adPassword.style.visibility = 'visible'
-          name.style.border = ''
-          email.style.border = ''
+
+        verify(password , adPassword, name, email)
+        
       }
 })
