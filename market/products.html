@@ -218,7 +218,7 @@
         word-break: break-all;
       }
 
-      span {
+      span , .price{
         font-weight: bold;
         color: #27ae60;
       }
@@ -291,11 +291,74 @@
       .header-title {
         font-size: 10px;
       }
+
+      .product-popup{
+        position: fixed;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+        width: 70vh;
+        height: 70vh;
+        z-index: 1000;
+        background-color: white;
+        visibility: hidden;
+        animation: fadeIn 1s ease-in-out;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .popup-Img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & img{
+          width: 50%;
+          height: 50%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .close{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 50px;
+        cursor: pointer;
+        color: #2c3e50;
+      }
     </style>
   </head>
   <body>
     <div class="account">
      <span id="accountName">Vá até a tela inicial e crie sua conta.</span>
+    </div>
+    <div class="product-popup">
+      <span id="close">X</span>
+      <h1 style="text-align: center; ">Produto</h1>
+      <div class="popup-Img">
+        <img id="popupImg"
+          src=""
+          alt="Camisa Social Preta"
+        />
+      </div>
+       <div style="margin: 10px 0;" class="description">
+          <p id="popupTitle" style="text-align: center;"></p>
+          <p class="price" id="popupPrice" style="text-align: center; font-size: 20pt;"></p>
+        </div>
+
     </div>
     <header>
       <div class="img-container">
@@ -331,11 +394,11 @@
       <section class="products container">
         <div class="product">
           <img
-            class="items"
+            class="items" 
             src="https://th.bing.com/th/id/OIP.uD7mZNlH2UZf8KzaoZT0VwHaHa?rs=1&pid=ImgDetMain"
             alt="Camisa Social Preta"
           />
-          <p class="description">Camisa Social <br /><span>R$ 159,99</span></p>
+          <p class="description">Camisa Social <br /></p><span class="pricess">R$ 159,99</span>
         </div>
         <div class="product">
           <img
@@ -343,7 +406,7 @@
             src="https://lojaspompeia.vtexassets.com/arquivos/ids/825836-314-419?v=638506156220230000&width=314&height=419&aspect=true"
             alt="Calça de Abrigo Cinza"
           />
-          <p class="description">Calça De Abrigo <br /><span>R$ 40,00</span></p>
+          <p class="description">Calça De Abrigo  </p><br> <span class="pricess">R$ 40,00</span>
         </div>
         <div class="product">
           <img
@@ -351,7 +414,7 @@
             src="https://th.bing.com/th?id=OPHS.godK%2bGlwKYSHPw474C474&w=248&h=248&c=17&o=5&pid=21.1"
             alt="Moletom Preto"
           />
-          <p class="description">Moletom <br /><span>R$ 50,00</span></p>
+          <p class="description">Moletom  </p> <br> <span class="pricess">R$ 50,00</span>
         </div>
         <div class="product">
           <img
@@ -359,7 +422,7 @@
             src="https://th.bing.com/th?q=Bermuda+Purple+Yellow&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=pt-BR&cc=BR&setlang=pt-br&adlt=moderate&t=1&mw=247"
             alt="Bermuda"
           />
-          <p class="description">Bermuda<br /><span>R$ 29,99</span></p>
+          <p class="description">Bermuda<br /></p><span class="pricess">R$ 29,99</span>
         </div>
         <hr class="vertical-hr" />
         <div class="product">
@@ -368,7 +431,7 @@
             src="https://th.bing.com/th/id/OIP.lxD9bOkY2Em3RoJQtS4ELQHaHa?w=203&h=203&c=7&r=0&o=5&pid=1.7"
             alt="Vestido"
           />
-          <p class="description">Vestido<br /><span>R$ 70,00</span></p>
+          <p class="description">Vestido<br /></p><span class="pricess">R$ 70,00</span>
         </div>
         <div class="product">
           <img
@@ -376,7 +439,7 @@
             src="https://th.bing.com/th/id/OIP.rD1dbRX4mDY_9aUl8AfTHwHaE7?w=203&h=135&c=7&r=0&o=5&pid=1.7"
             alt="Saia"
           />
-          <p class="description">Saia <br /><span>R$ 45,99</span></p>
+          <p class="description">Saia <br /></p><span class="pricess">R$ 45,99</span>
         </div>
         <div class="product">
           <img
@@ -384,7 +447,7 @@
             src="https://th.bing.com/th/id/OIP.jdojCY2cO-FR7DiU4DrcAwHaJW?w=203&h=256&c=7&r=0&o=5&pid=1.7"
             alt="Camisa Social"
           />
-          <p class="description">Camisa Social<br /><span>R$ 149,99</span></p>
+          <p class="description">Camisa Social<br /></p><span class="pricess">R$ 149,99</span>
         </div>
         <div class="product">
           <img
@@ -392,7 +455,7 @@
             src="https://th.bing.com/th/id/OIP.5oXO3tPqOPrikulzxHZXqQHaHa?w=218&h=218&c=7&r=0&o=5&pid=1.7"
             alt="Blazer"
           />
-          <p class="description">Blazer <br /><span>R$ 259,99</span></p>
+          <p class="description">Blazer <br /></p><span class="pricess">R$ 259,99</span>
         </div>
       </section>
 
@@ -407,7 +470,7 @@
             src="https://http2.mlstatic.com/D_NQ_NP_875865-MLB79714876642_102024-O-linha-de-pedreiro-nylon-reforcado-100-metros-lotus.webp"
             alt="Linha de Nylon Reforaçada"
           />
-          <p class="description">Linha de Nylon <br /><span>R$19,87</span></p>
+          <p class="description">Linha de Nylon <br /></p><span class="pricess">R$19,87</span>
         </div>
 
         <div class="product">
@@ -416,7 +479,7 @@
             src="https://th.bing.com/th/id/OIP.iNxD1GNt45eUosG2MWeLmAAAAA?rs=1&pid=ImgDetMain"
             alt="Trena"
           />
-          <p class="description">Trena <br /><span>R$ 29,99</span></p>
+          <p class="description">Trena <br /></p><span class="pricess">R$ 29,99</span>
         </div>
 
         <div class="product">
@@ -425,7 +488,7 @@
             src="https://cdn.leroymerlin.com.br/products/prumo_400g_momfort_89538232_bc3e_600x600.jpg"
             alt="Prumo"
           />
-          <p class="description">Prumo <br /><span>R$ 31,90</span></p>
+          <p class="description">Prumo <br /></p><span class="pricess">R$ 31,90</span>
         </div>
 
         <div class="product">
@@ -434,7 +497,7 @@
             src="https://http2.mlstatic.com/D_NQ_NP_716505-MLA80061077256_102024-O.webp"
             alt="Cabo de Aço"
           />
-          <p class="description">Cabo de Aço <br /><span>R$ 14,89</span></p>
+          <p class="description">Cabo de Aço <br /></p><span class="pricess">R$ 14,89</span>
         </div>
 
         <hr class="vertical-hr" />
@@ -445,7 +508,7 @@
             src="https://img.lojadomecanico.com.br/IMAGENS/31/418/72866/1632163673999.JPG"
             alt="Carrinho de Mão"
           />
-          <p class="description">Carrinho de Mão<br /><span>R$ 159,00</span></p>
+          <p class="description">Carrinho de Mão<br /></p><span class="pricess">R$ 159,00</span>
         </div>
 
         <div class="product">
@@ -454,7 +517,7 @@
             src="https://img.lojadomecanico.com.br/256/21/230/164119/1630669330120.JPG"
             alt="Martelete"
           />
-          <p class="description">Martelete <br /><span>R$ 519,00</span></p>
+          <p class="description">Martelete <br /></p><span class="pricess">R$ 519,00</span>
         </div>
 
         <div class="product">
@@ -463,7 +526,7 @@
             src="https://http2.mlstatic.com/D_NQ_NP_690892-MLU79387089509_092024-O.webp"
             alt="Furadeira"
           />
-          <p class="description">Furadeira <br /><span>R$ 249,00</span></p>
+          <p class="description">Furadeira <br /></p><span class="pricess">R$ 249,00</span>
         </div>
 
         <div class="product">
@@ -472,7 +535,7 @@
             src="https://http2.mlstatic.com/D_NQ_NP_948518-MLA81650420616_012025-O.webp"
             alt="Troquesa"
           />
-          <p class="description">Troquesa <br /><span>R$ 49,00</span></p>
+          <p class="description">Troquesa <br /></p><span class="pricess">R$ 49,00</span>
         </div>
       </section>
 
@@ -582,6 +645,8 @@
       </div>
     </footer>
 
+
+    <script src="productWindow.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
