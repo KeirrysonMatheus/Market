@@ -300,13 +300,13 @@
         transform: translate(-50%, -50%);
         margin: auto;
         width: 40vh;
-        height: 40vh;
         z-index: 1000;
         background-color: white;
         visibility: hidden;
         animation: fadeIn 1s ease-in-out;
         border-radius: 10px;
         padding: 20px;
+        transition: color 1s;
       }
 
       .popup-Img{
@@ -317,6 +317,7 @@
         & img{
           width: 50%;
           height: 50%;
+          max-height: 50%;
           object-fit: cover;
           border-radius: 10px;
         }
@@ -335,12 +336,14 @@
         position: absolute;
         top: 10px;
         left: 20px;
-        font-size: 50px;
+        font-size:100000px;
         cursor: pointer;
         color: #2c3e50;
         z-index: 9999;
+
       }
     </style>
+    
   </head>
   <body>
     <div class="account">
@@ -407,7 +410,7 @@
             src="https://lojaspompeia.vtexassets.com/arquivos/ids/825836-314-419?v=638506156220230000&width=314&height=419&aspect=true"
             alt="Calça de Abrigo Cinza"
           />
-          <p class="description">Calça De Abrigo  </p><br> <span class="pricess">R$ 40,00</span>
+          <p class="description">Calça De Abrigo <br> </p> <span class="pricess">R$ 40,00</span>
         </div>
         <div class="product">
           <img
@@ -415,7 +418,7 @@
             src="https://th.bing.com/th?id=OPHS.godK%2bGlwKYSHPw474C474&w=248&h=248&c=17&o=5&pid=21.1"
             alt="Moletom Preto"
           />
-          <p class="description">Moletom  </p> <br> <span class="pricess">R$ 50,00</span>
+          <p class="description">Moletom <br> </p>  <span class="pricess">R$ 50,00</span>
         </div>
         <div class="product">
           <img
@@ -423,7 +426,7 @@
             src="https://th.bing.com/th?q=Bermuda+Purple+Yellow&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=pt-BR&cc=BR&setlang=pt-br&adlt=moderate&t=1&mw=247"
             alt="Bermuda"
           />
-          <p class="description">Bermuda<br /></p><span class="pricess">R$ 29,99</span>
+          <p class="description">Bermuda <br /></p><span class="pricess">R$ 29,99</span>
         </div>
         <hr class="vertical-hr" />
         <div class="product">
@@ -645,9 +648,7 @@
         </p>
       </div>
     </footer>
-
-
-    <script src="productWindow.js"></script>
-    <script src="script.js"></script>
   </body>
+  <script src="productWindow.js"></script>
+  <script src="script.js"></script>
 </html>
