@@ -24,11 +24,3 @@ btn.addEventListener("click", (event) => {
     alert("Verifique os dados e tente novamente");
   }
 });
-
-
-// 1. No error handling for when localStorage is empty or "user" key doesn't exist
-// 2. The h1 creation and assignment is incorrect - textContent assignment returns a string, not the element
-// 3. Using innerHTML to set the h1 content is unsafe and overwrites all page content
-// 4. No input validation before checking credentials
-// 5. Storing passwords in localStorage is not secure
-// 6. First 'user' variable is declared but never used
